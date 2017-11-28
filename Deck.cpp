@@ -10,8 +10,8 @@ void seedRandom() {
     srand(time(NULL));
 }
 
-double nextRandom() {
-    double random = ((double) rand()) / RAND_MAX;
+int nextRandom() {
+    int random = rand();
     return random;
 }
 
