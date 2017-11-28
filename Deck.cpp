@@ -45,7 +45,7 @@ void Deck::Shuffle() {
 Card Deck::Deal() {
     // Pulls the top card out of the deck
     // and gives it to the caller
-    // Make a special zero valued card in case we have nothing left
+    // Before dealing, check if the deck is empty, if so repopulate and shuffle, then draw.
     Card aCard(BLANK,CLUBS);
     if (!m_Cards.empty()) {
         aCard = m_Cards.back();
