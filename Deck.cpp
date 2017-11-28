@@ -9,9 +9,9 @@
 void seedRandom() {
     srand(time(NULL));
 }
-
+// Random number between 0 and 51
 int nextRandom() {
-    int random = rand();
+    int random = rand()%52;
     return random;
 }
 
