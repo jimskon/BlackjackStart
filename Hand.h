@@ -24,5 +24,5 @@ public:
     string GetCardList();
 
 private:
-    vector <Card> m_Cards;
+    vector <Card> cards;
 };

@@ -22,7 +22,7 @@ Deck::Deck() {
 
 void Deck::Clear() {
     //clear vector
-    m_Cards.clear();
+    Cards.clear();
 }
 
 void Deck::Populate() {
@@ -31,8 +31,7 @@ void Deck::Populate() {
     //create deck by getting a copy of each card in the pool and placing it in the deck
     for (int s = CLUBS; s <= SPADES; ++s) {
         for (int r = ACE; r <= KING; ++r) {
-            card_pool.push_back(Card(static_cast<cRank> (r), static_cast<suit> (s)));
-            m_Cards.push_back(card_pool.back());
+            Cards.push_back(Card(static_cast<cRank> (r), static_cast<cSuit> (s)));
         }
     }
 }
@@ -47,9 +46,9 @@ Card Deck::Deal() {
     // and gives it to the caller
     // Make a special zero valued card in case we have nothing left
     Card aCard(BLANK,CLUBS);
-    if (!m_Cards.empty()) {
-        aCard = m_Cards.back();
-        m_Cards.pop_back();
+    if (!Cards.empty()) {
+        aCard = Cards.back();
+        Cards.pop_back();
     } else {
         cout << "Out of cards, Unable to deal.\n";
     }
@@ -58,8 +57,8 @@ Card Deck::Deal() {
 
 string Deck::GetCardList() {
     string list = "";
-    for (int i = 0; i < m_Cards.size(); i++) {
-        list += m_Cards[i].CardName() + " ";
+    for (int i = 0; i < Cards.size(); i++) {
+        list += Cards[i].CardName() + " ";
     }
     return list;
 

@@ -6,12 +6,12 @@
 #include "Hand.h"
 
 Hand::Hand() {
-    m_Cards.reserve(7);
+    cards.reserve(7);
 }
 
 void Hand::Add(Card& card) {
     // add a card to hand
-    m_Cards.push_back(card);
+    cards.push_back(card);
 }
 
 bool Hand::Wins() {
@@ -22,13 +22,13 @@ bool Hand::Wins() {
 
 void Hand::Clear() {
     //clear vector of cards
-    m_Cards.clear();
+    cards.clear();
 }
 
 string Hand::GetCardList() {
     string list = "";
-    for (int i = 0; i < m_Cards.size(); i++) {
-        list += m_Cards[i].CardName() + " ";
+    for (int i = 0; i < cards.size(); i++) {
+        list += cards[i].CardName() + " ";
     }
     return list;
 

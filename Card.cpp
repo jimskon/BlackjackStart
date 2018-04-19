@@ -7,20 +7,20 @@
 //Constructor
 
 Card::Card() {
-    m_Rank = ACE;
-    m_Suit = CLUBS;
+    rank = ACE;
+    suit = CLUBS;
 }
 
-Card::Card(cRank r, suit s) {
-    m_Rank = r;
-    m_Suit = s;
+Card::Card(cRank r, cSuit s) {
+    rank = r;
+    suit = s;
 }
 
 string Card::CardName() const {
     const string RANKS[] = {"0", "A", "2", "3", "4", "5", "6", "7", "8", "9",
         "10", "J", "Q", "K"};
     const string SUITS[] = {"c", "d", "h", "s"};
-    return (RANKS[m_Rank] + SUITS[m_Suit]);
+    return (RANKS[rank] + SUITS[suit]);
 }
 
 string Card::CardNameLong() const {
@@ -30,7 +30,7 @@ string Card::CardNameLong() const {
 
 int Card::GetValue() const {
     //value is number showing on card
-    int value = m_Rank;
+    int value = rank;
     //value is 10 for face cards
     if (value > 10) {
         value = 10;

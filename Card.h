@@ -9,7 +9,7 @@ enum cRank {
     JACK, QUEEN, KING
 };
 
-enum suit {
+enum cSuit {
     CLUBS, DIAMONDS, HEARTS, SPADES
 };
 
@@ -17,7 +17,7 @@ class Card {
 public:
     // Card Constructors
     Card();
-    Card(cRank r, suit s);
+    Card(cRank r, cSuit s);
 
     // Get the short name of a card (1s, Kc)
     string CardName() const; 
@@ -30,8 +30,8 @@ public:
     int GetValue() const; // 1-13
 
 private:
-    cRank m_Rank;
-    suit m_Suit;
+    cRank rank;
+    cSuit suit;
 };
 
 #endif /* CARD_H */

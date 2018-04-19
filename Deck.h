@@ -28,9 +28,7 @@ public:
     string GetCardList();
 
 private:
-    vector <Card> m_Cards;  // Used to store a list of current cards in Deck. 
-    vector <Card> card_pool;  // Used to actually store the "real" cards..
-                              // Never changes, these cards are used as a card source to build a Deck
+    vector <Card> Cards;  // Used to store a list of current cards in Deck. 
 };
 
 #endif /* DECK_H */
