@@ -11,9 +11,9 @@
 void seedRandom() {
     srand(time(NULL));
 }
-
-double nextRandom() {
-    double random = ((double) rand()) / RAND_MAX;
+// Random number between 0 and 51
+int nextRandom() {
+    int random = rand()%52;
     return random;
 }
 
@@ -46,7 +46,7 @@ void Deck::Shuffle() {
 Card Deck::Deal() {
     // Pulls the top card out of the deck
     // and gives it to the caller
-    // Make a special zero valued card in case we have nothing left
+    // Before dealing, check if the deck is empty, if so repopulate and shuffle, then draw.
     Card aCard(BLANK,CLUBS);
     if (!Cards.empty()) {
         aCard = Cards.back();
